@@ -34,6 +34,15 @@ class Visite
 
     #[ORM\Column(nullable: true)]
     private ?int $tempmax = null;
+    
+    public function getDatecreationString() : string
+    {
+        if($this->datecreation == null){
+            return "";
+        } else{
+            return $this->datecreation->format('d/m/Y');
+        }
+    }
 
     public function getId(): ?int
     {

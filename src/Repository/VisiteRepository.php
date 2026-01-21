@@ -9,6 +9,7 @@ use Doctrine\Persistence\ManagerRegistry;
 /**
  * @extends ServiceEntityRepository<Visite>
  */
+
 class VisiteRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
