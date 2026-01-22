@@ -36,6 +36,16 @@ class VisiteRepository extends ServiceEntityRepository
     }
     
     /**
+     * Ajoute ou modifie une visite
+     * @param Visite $visite
+     * @return void
+     */
+    public function add(Visite $visite): void{
+        $this->getEntityManager()->persist($visite);
+        $this->getEntityManager()->flush();
+    }
+    
+    /**
      * Enregistrements dont un champ est égal à une valeur
      * ou tous les enregistrements si la valeur est vide
      * @param type $champ
