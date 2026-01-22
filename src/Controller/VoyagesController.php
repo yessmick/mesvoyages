@@ -29,6 +29,14 @@ class VoyagesController extends AbstractController{
     public function __construct(VisiteRepository $repository) {
         $this->repository = $repository;
     }
+    
+    #[Route('/voyages/voyage/{id}', name: 'voyages.showone')]
+    public function showOne($id): Response{
+        $visite = $this->repository->find($id);
+        return $this->render("pages/voyage.html.twig", [
+            'visite' => $visite
+        ]);
+    }
 
     #[Route('/voyages/tri/{champ}/{ordre}', name: 'voyages.sort')]
     public function sort($champ, $ordre): Response{
